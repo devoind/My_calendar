@@ -6,11 +6,13 @@ services:
     volumes:
       - todolist_postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: todolist
+      - POSTGRES_DB=todolist
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=localhost
+      - POSTGRES_PORT=5432
     ports:
-    - "5432:5432"
+    - 5432:5432
 
 volumes:
   todolist_postgres_data:
