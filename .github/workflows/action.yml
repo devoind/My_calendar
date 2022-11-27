@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           source: "deploy/docker-compose.yml"
-          target: "todolist"
+          target: "todolist_ci"
           strip_components: 1
       - name: deploy app
         uses: appleboy/ssh-action@master
@@ -47,3 +47,4 @@ jobs:
           script: |
             cd todolist
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
+
