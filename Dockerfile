@@ -4,11 +4,11 @@ ENV PYTHONBUFFERED 1
 
 WORKDIR /app
 
-COPY todolist/ .
-
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt
+
+COPY todolist/ .
 
 EXPOSE 8000
 
