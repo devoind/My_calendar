@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: clone code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: docker build
         run: docker build -t devoind/skypro_evedrov_diploma_app:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
       - name: docker login
@@ -24,7 +24,7 @@ jobs:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
     steps:
       - name: clone code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: render configs
         run: |
           mkdir deploy
@@ -48,6 +48,3 @@ jobs:
             cd todolist_ci
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose down
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
-
-
-
