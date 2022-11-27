@@ -9,7 +9,7 @@ services:
     ports:
       - "80:80"
   api:
-    image: devoind/todolist:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    image: devoind/skypro_evedrov_diploma_app:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     restart: always
     environment:
       DEBUG: ${DEBUG}
@@ -26,7 +26,7 @@ services:
     ports:
       - "8000:8000"
   migrations:
-     image: devoind/todolist:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+     image: devoind/skypro_evedrov_diploma_app:$GITHUB_REF_NAME-$GITHUB_RUN_ID
      environment:
        POSTGRES_HOST: ${POSTGRES_HOST}
        POSTGRES_USER: ${POSTGRES_USER}
