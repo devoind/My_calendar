@@ -55,7 +55,7 @@ services:
       timeout: 5s
       retries: 5
 
-
+#sh -c "python3 manage.py makemigrations"
 
 volumes:
   pg_data:
